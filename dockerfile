@@ -12,10 +12,10 @@ RUN apt-get update -y && apt-get update \
 # Add SQL Server ODBC Driver 18 for Debian 11
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
   && curl https://packages.microsoft.com/config/debian/11/prod.list > /etc/apt/sources.list.d/mssql-release.list \
-  && apt-get update
-RUN apt-get install -y --no-install-recommends --allow-unauthenticated msodbcsql18 mssql-tools
-RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
-RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+  && apt-get update \
+  && apt-get install -y --no-install-recommends --allow-unauthenticated msodbcsql18 mssql-tools \
+  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile \
+  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 
 # upgrade pip and install requirements.
 COPY /requirements.txt /requirements.txt
