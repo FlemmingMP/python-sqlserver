@@ -18,3 +18,6 @@ services:
       - ./dev/powin-db:/scripts/
     ports:
       - 1433:1433
+
+  app:
+    build: .
