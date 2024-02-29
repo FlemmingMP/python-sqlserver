@@ -21,3 +21,5 @@ services:
 
   app:
     build: .
+    environment:
+      DATABASE_HOST: db

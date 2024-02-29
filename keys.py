@@ -5,6 +5,8 @@ import os
 database_host = os.environ.get("DATABASE_HOST") or "localhost"
 database_password = os.environ.get("DATABASE_PASSWORD") or "Qwerty123"
 
+print("==== Connecting to ", database_host)
+
 # Tveit-instans, VB - SQLAlchemy:
 sql_connection_string_FPT_TV_SQL01_VB = f"DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={database_host},1433;DATABASE=master;UID=sa;PWD={database_password};Encrypt=no"
 
